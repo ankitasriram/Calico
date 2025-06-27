@@ -1,0 +1,1 @@
+# CLIP model loading and embedding code
