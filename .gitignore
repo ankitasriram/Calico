@@ -51,6 +51,8 @@ env/
 .env/
 env.bak/
 venv.bak/
+.env
+.env.*
 
 # PyCharm
 .idea/
