@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "./navbar";
+import Navbar from "./components/navbar";
 import { Kulim_Park } from 'next/font/google';
 
 const kulim = Kulim_Park({

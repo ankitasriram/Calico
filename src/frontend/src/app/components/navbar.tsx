@@ -17,8 +17,8 @@ export default function Navbar() {
 
         return (
 
-            <Link key={path} href={path} className={`flex text-3xl p-3
-                ${pathname === path ? "bg-black rounded-xl text-white" : ""}`}
+            <Link key={path} href={path} className={`flex text-2xl p-2
+                ${pathname === path ? "bg-[#603F37] rounded-xl text-white" : ""}`}
             >
                 <Image 
                 src={imageSrc}
@@ -34,7 +34,7 @@ export default function Navbar() {
     return (
         <div className="relative w-1/5 h-full shadow-lg/100 flex flex-col px-5">
 
-            <div className="flex mt-5 mb-10 text-5xl tracking-wide"> 
+            <div className="flex mt-5 mb-10 text-5xl text-black tracking-wide"> 
                 <Image 
                 src="/logo.svg"
                 alt="Logo"
