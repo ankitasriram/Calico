@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from "react";
 import ListingArea from "./listing_area";
 
@@ -7,7 +6,7 @@ export default function Imgtab() {
     const [results, setResults] = useState(false)
 
     return (
-        <div className="w-4/5 h-2/3 flex flex-col text-xl items-center pb-10">
+        <div className="w-4/5 h-2/3 flex flex-col items-center pb-10">
             drag and drop the clothing you want to search for!
 
             <div

@@ -1,13 +1,10 @@
-import React from 'react'
+export default function ListingArea() {
 
-const ListingArea = () => {
     return (
-        <div className="bg-dark-orange rounded-xl m-15 p-10 w-full flex gap-8">
+        <div className="bg-light-orange rounded-xl p-10 w-full flex justify-center gap-8">
             <div className='bg-white rounded-lg w-[35vh] h-[33vh]'></div>
             <div className='bg-white rounded-lg w-[35vh] h-[33vh]'></div>
             <div className='bg-white rounded-lg w-[35vh] h-[33vh]'></div>
         </div>
-    )
+    );
 }
-
-export default ListingArea
