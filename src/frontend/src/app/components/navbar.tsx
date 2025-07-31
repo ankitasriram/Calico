@@ -48,7 +48,7 @@ export default function Navbar() {
 
             {navItems.map(renderNavItems)}
 
-            <Image src="/tab.svg" alt="Calico background" layout="fill" objectFit="cover" style={{ zIndex: -1 }}/>
+            <Image src="/tab.svg" alt="Calico background" fill style={{ zIndex: -1, objectFit: "cover"}}/>
         </div>
 
     );
