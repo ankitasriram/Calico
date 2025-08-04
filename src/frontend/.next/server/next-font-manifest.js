@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/ankitasriram/calicopy/src/frontend/src/app/layout\":[\"static/media/77c9aa6c7112bab0-s.p.woff2\",\"static/media/3f4c661fff533b70-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

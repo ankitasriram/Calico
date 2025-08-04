@@ -32,3 +32,19 @@ typing_extensions==4.14.0
 uvicorn==0.35.0
 validators==0.34.0
 weaviate-client==4.15.4
+
+# FashionCLIP and dependencies
+fashion-clip>=2.0.0
+torch>=1.9.0
+torchvision>=0.10.0
+transformers>=4.21.0
+pillow>=8.3.0
+numpy>=1.21.0
+
+# Additional dependencies for the service
+requests>=2.28.0
+python-multipart>=0.0.5  # For file uploads in FastAPI
+
+# Optional: For better performance
+scikit-learn>=1.0.0  # For additional similarity metrics
+faiss-cpu>=1.7.0     # For faster similarity search (alternative to Weaviate)
