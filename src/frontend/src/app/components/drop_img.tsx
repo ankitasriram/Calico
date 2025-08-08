@@ -1,9 +1,14 @@
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 
-export default function Drop_Img(onUploadComplete: (files: File[]) => void) {
+interface Drop_Props {
+    onUploadComplete: (file: File) => void;
+}
+
+export default function Drop_Img({ onUploadComplete }: Drop_Props) {
     const hiddenFileInput = useRef<HTMLInputElement>(null);
     const [isDragging, setIsDragging] = useState(false);
+    const [file, setFile] = useState<File | null>(null);
 
     const handleDragEnter = useCallback((e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
@@ -28,18 +33,23 @@ export default function Drop_Img(onUploadComplete: (files: File[]) => void) {
         e.stopPropagation();
         setIsDragging(false);
 
-        const files = Array.from(e.dataTransfer.files);
-        if (files.length > 0) {
-            onUploadComplete(files);
-        }
-    }, [onUploadComplete]);
+        const selectedFile = e.dataTransfer.files[0];
+        handleFileChange(selectedFile)
+    }, []);
 
     const handleClick = () => {
         hiddenFileInput.current?.click();
     }
 
-    const handleFileChange = (event: any) => {
-        const files = event.target.files;
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            handleFileChange(e.target.files[0]);
+        }
+    };
+
+    const handleFileChange = (selectedFile: File) => {
+        setFile(selectedFile);
+        onUploadComplete(selectedFile);
     };
 
     return (
@@ -54,9 +64,21 @@ export default function Drop_Img(onUploadComplete: (files: File[]) => void) {
             <div
                 className="bg-white size-full py-[8vw] border-[0.3vw] border-dark-orange border-dotted rounded-[1vw] flex flex-col justify-center items-center text-dark-orange"
             >
-                <Image src="/upload_cloud.svg" alt="Upload" width={60} height={60} />
-                drag & drop or click anywhere to upload image
-                <input type="file" onChange={handleFileChange} style={{ display: 'none' }} ref={hiddenFileInput}></input>
+                {file ? (
+                    <Image
+                        src={URL.createObjectURL(file)}
+                        alt="Uploaded Image"
+                        width={350}
+                        height={350}
+                    />
+                ) : (
+                    <div>
+                        <Image src="/upload_cloud.svg" alt="Upload" width={60} height={60} />
+                        <p>drag and drop your image here!</p>
+                    </div>    
+                )}
+            
+                <input type="file" onChange={handleInputChange} style={{ display: 'none' }} ref={hiddenFileInput}></input>
             </div>
         </object>
     );

@@ -7,15 +7,20 @@ import { useState } from "react";
 export default function Home() {
   const [results, setResults] = useState(false);
 
+  const uploadComplete = (file: File) => void {
+
+
+  }
+
   return (
-    <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col justify-center items-center overflow-scroll">
+    <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col justify-center items-center overflow-y-scroll">
 
       <h1 className="text-[2.5vw]">calicopy image search</h1>
       <div className="w-2/3 h-2/3 flex flex-col items-center pb-10">
           drag and drop the clothing you want to search for!
 
           <div className="w-full my-[2vw]">
-            <Drop_Img />
+            <Drop_Img onUploadComplete={uploadComplete}/>
           </div>
 
           <button

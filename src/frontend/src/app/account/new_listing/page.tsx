@@ -1,5 +1,5 @@
 'use client'
-import Drop_Img from "@/app/components/drop_img";
+import Drop_Img from "../../components/drop_img";
 import { useState } from "react";
 
 export default function New_Listing() {
@@ -8,14 +8,18 @@ export default function New_Listing() {
     const [desc, setDesc] = useState("");
     const [price, setPrice] = useState("");
 
+    const uploadComplete = (file: File) => void {
+
+    }
+
     return (
 
-        <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col items-center overflow-scroll p-[7vw]">
+        <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col items-center overflow-y-scroll p-[7vw]">
             <p className="text-[2.5vw] mb-[2vw]">new listing</p>
 
             <div className="flex size-full">
                 <div className="w-2/5">
-                    <Drop_Img />
+                    <Drop_Img onUploadComplete={uploadComplete}/>
                 </div>
                 <div className="flex flex-col w-3/5 px-[3vw] justify-center">
                     listing name

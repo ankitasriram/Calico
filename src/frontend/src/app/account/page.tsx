@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Account() {
     return(
-        <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col items-center overflow-scroll p-[7vw]">
+        <div className="bg-cream fixed top-0 right-0 w-4/5 h-full flex flex-col items-center overflow-y-scroll p-[7vw]">
             
             <div className="flex justify-left w-full mb-[3vw]">
                 <Image src="/profile.svg" alt="Profile" width={200} height={200}></Image>
